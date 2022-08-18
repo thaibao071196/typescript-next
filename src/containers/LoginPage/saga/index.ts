@@ -1,6 +1,7 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { LOGIN_SAGA } from '../constants';
 import { dataUserLogin, LoginSaga } from '../types';
+import { onLoginSuccess } from '../../App/actions';
 
 import { repositoryFactory } from '../../../repositories/repositoryFactory';
 const loginRepository = repositoryFactory.get('login');
@@ -16,8 +17,18 @@ function* onLoginSaga({ payload }: LoginSaga) {
       return true;
     }
 
-    if (Object.keys(data.user).length > 0) {
-    }
+    const { email, roleId } = data.user;
+
+    console.log(email, roleId);
+
+    /// test ting ne
+
+    yield put(
+      onLoginSuccess({
+        email,
+        roleId,
+      }),
+    );
   } catch (e) {
     console.log(e);
     //
