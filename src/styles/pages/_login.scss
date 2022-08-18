@@ -1,0 +1,111 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color_gradient_turquoise;
+    font-family: $font_primary;
+
+    .form {
+        background-color: $color_white;
+        max-width: 500px;
+        min-width: 350px;
+        max-height: 700px;
+        min-height: 500px;
+        margin: 100px auto;
+        border-radius: 25px;
+
+        &__title {
+            text-align: center;
+            font-family: $font_primary;
+            padding: 5px 0;
+            margin: 0;
+            font-size: 35px;
+
+        }
+
+        &__fields {
+            &__element {
+                align-items: center;
+                padding-top: 2rem;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                &__input {
+                    box-sizing: border-box;
+                    border: none;
+                    position: relative;
+                    padding: 10px 4px;
+                    box-shadow: $color_gray 0px 3px 0px 0px;
+                    outline: none;
+                    width: 80%;
+
+                    &::-webkit-input-placeholder {
+                        opacity: 1;
+                        transition: opacity 0.25s ease-out;
+                    }
+
+                    &:hover::-webkit-input-placeholder {
+                        opacity: 0;
+                    }
+
+                    &:focus {
+                        box-shadow: 0px 3px 0px 0px rgba(34, 193, 195, 0.7);
+                    }
+
+                }
+
+                &__title {
+                    align-self: start;
+                    padding-bottom: 0.5rem;
+                    color: $color_gray;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+
+                &--has-eye {
+                    position: absolute;
+                    top: 58px;
+                    right: 40px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+
+            }
+
+            &__error {
+                margin: 5px auto 0 auto;
+                width: 80%;
+                color: $color_red;
+                font-size: 12px;
+            }
+        }
+
+        &__submit {
+            border-radius: 25px;
+            width: 80%;
+            height: 40px;
+            font-size: 1.3rem;
+            color: $color_white;
+            font-weight: 700;
+            background: $color_gradient_turquoise;
+            border: 0px;
+            cursor: pointer;
+            transition: opacity 0.25s ease-out;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            text-align: center;
+            outline: none;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
